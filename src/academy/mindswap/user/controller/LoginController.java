@@ -1,12 +1,8 @@
 package academy.mindswap.user.controller;
 
 import academy.mindswap.user.UserDB;
-import academy.mindswap.user.model.User;
 import academy.mindswap.user.view.LoginView;
 import academy.mindswap.user.view.View;
-import academy.mindswap.user.view.WelcomeView;
-
-import java.util.Optional;
 
 public class LoginController implements Controller {
 
@@ -20,16 +16,14 @@ public class LoginController implements Controller {
 
 
     @Override
-    public void run() {
-        LoginView login = (LoginView) view;
-        login.run();
-        String[]  userDetails= login.sendInputToController();
-        Optional<User> user = userDB.selectUser(userDetails[0],userDetails[1]);
-        if(user.isPresent()){
-          nextController.run();
-          return;
-        }
-        run();
+    public void init() {
+        view.show();
+        nextController.init();
+    }
+
+    public boolean doAuthenticate(String username, String password){
+
+        return userDB.selectUser(username,password).isPresent();
     }
 
     @Override

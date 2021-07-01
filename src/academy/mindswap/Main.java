@@ -19,14 +19,16 @@ public class Main {
         LoginController loginController = new LoginController();
         loginController.setDB(userDB);
 
-        loginController.setView(new LoginView());
+        WelcomeController welcomeController=  new WelcomeController();
+        LoginView loginView= new LoginView();
 
-        WelcomeController welcomeController=  new WelcomeController(); ;
+        loginController.setView(loginView);
         welcomeController.setView(new WelcomeView());
 
-        loginController.setNextController(welcomeController);
+        loginView.setController(loginController);
 
-        loginController.run();
+        loginController.setNextController(welcomeController);
+        loginController.init();
 
 
 

@@ -1,5 +1,6 @@
 package academy.mindswap.user.view;
 
+import academy.mindswap.user.controller.Controller;
 import academy.mindswap.user.controller.LoginController;
 
 import java.io.BufferedReader;
@@ -10,14 +11,21 @@ public class LoginView implements View {
 
     String username;
     String password;
+    LoginController loginController;
 
     @Override
-    public void run(){
+    public void show(){
         sendMessageToConsole("Username:");
         username=readInputFromConsole();
         sendMessageToConsole("Password:");
         password=readInputFromConsole();
+
+        if(!loginController.doAuthenticate(username,password)){
+            show();
+        }
     }
+
+
 
     @Override
     public void sendMessageToConsole(String message) {
@@ -36,5 +44,10 @@ public class LoginView implements View {
 
     public String[] sendInputToController(){
         return new String[] {username,password};
+    }
+
+    @Override
+    public void setController(Controller controller) {
+        loginController=(LoginController) controller;
     }
 }

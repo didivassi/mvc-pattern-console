@@ -9,8 +9,8 @@ public class WelcomeController implements Controller {
 
     }
     @Override
-    public void run() {
-      view.run();
+    public void init() {
+      view.show();
     }
 
     @Override

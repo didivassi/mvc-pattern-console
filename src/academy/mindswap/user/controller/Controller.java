@@ -4,7 +4,7 @@ import academy.mindswap.user.view.View;
 
 public interface Controller {
 
-    void run();
+    void init();
     void setView(View view);
     void setNextController(Controller controller);
 }
