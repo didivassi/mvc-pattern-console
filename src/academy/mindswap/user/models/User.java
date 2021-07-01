@@ -1,19 +1,30 @@
-package academy.mindswap.user.model;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
+package academy.mindswap.user.models;
 
 public class User {
+    private int id;
     private String userName;
     private String email;
     private String password;
 
-    public User(String userName, String password){
+    public User(int id, String userName, String email, String password){
+        this.id=id;
         this.userName=userName;
         this.password=password;
+        this.email=email;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getUserName() {
         return userName;

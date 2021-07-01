@@ -1,10 +1,11 @@
-package academy.mindswap.user.controller;
+package academy.mindswap.user.controllers;
 
-import academy.mindswap.user.view.View;
+import academy.mindswap.user.views.View;
 
 public interface Controller {
 
     void init();
     void setView(View view);
     void setNextController(Controller controller);
+    void setUserId(int userId);
 }
