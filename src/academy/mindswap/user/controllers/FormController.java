@@ -5,11 +5,12 @@ import academy.mindswap.user.utils.FormLabels;
 import academy.mindswap.user.views.FormView;
 import academy.mindswap.user.views.View;
 
-public class FormController implements Controller{
+public class FormController implements Controller {
     FormView view;
     Controller nextController;
     UserServices userService;
     int userId;
+
     @Override
     public void init() {
 
@@ -18,25 +19,25 @@ public class FormController implements Controller{
         nextController.init();
     }
 
-    public void execute(FormLabels label, String newValue){
-        switch (label){
+    public void execute(FormLabels label, String newValue) {
+        switch (label) {
             case USERNAME:
-                if(userService.editUsername(userId,newValue)){
+                if (userService.editUsername(userId, newValue)) {
                     view.showSuccess(label);
                     return;
                 }
             case EMAIL:
-                if(userService.editEmail(userId,newValue)){
+                if (userService.editEmail(userId, newValue)) {
                     view.showSuccess(label);
                     return;
                 }
             case PASSWORD:
-                if(userService.editPassword(userId,newValue)){
+                if (userService.editPassword(userId, newValue)) {
                     view.showSuccess(label);
                     return;
                 }
             case DELETE:
-                if(userService.deleteUser(userId)){
+                if (userService.deleteUser(userId)) {
                     view.showSuccess(label);
                     return;
                 }
@@ -48,10 +49,10 @@ public class FormController implements Controller{
 
     @Override
     public void setView(View view) {
-        this.view=(FormView) view;
+        this.view = (FormView) view;
     }
 
-    public void setViewLabel(FormLabels label){
+    public void setViewLabel(FormLabels label) {
         view.setLabel(label);
     }
 
@@ -62,7 +63,7 @@ public class FormController implements Controller{
 
     @Override
     public void setUserId(int userId) {
-        this.userId=userId;
+        this.userId = userId;
     }
 
     public void setUserService(UserServices userService) {

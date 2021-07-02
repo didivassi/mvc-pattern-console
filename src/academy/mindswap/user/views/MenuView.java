@@ -13,7 +13,7 @@ public class MenuView  implements View{
     public void show() {
         IOUtils.sendMessageToConsole(Messages.MENU_LAYOUT);
         String option=IOUtils.readInputFromConsole();
-        ((MenuController)menuController).chooseOption(option);
+        ((MenuController) menuController).chooseOption(option);
 
     }
 

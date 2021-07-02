@@ -2,7 +2,6 @@ package academy.mindswap.user.controllers;
 
 import academy.mindswap.user.models.User;
 import academy.mindswap.user.services.AuthenticationServices;
-import academy.mindswap.user.services.UserService;
 import academy.mindswap.user.services.UserServices;
 import academy.mindswap.user.views.View;
 
@@ -31,21 +30,21 @@ public class LoginController implements Controller {
 
     @Override
     public void setView(View view) {
-        this.view =view;
+        this.view = view;
     }
 
     @Override
     public void setNextController(Controller controller) {
-        nextController=controller;
+        nextController = controller;
     }
 
     @Override
     public void setUserId(int userId) {
-        this.userId=userId;
+        this.userId = userId;
     }
 
     public void setAuthenticationService(AuthenticationServices authenticationService){
-     this.authenticationService=authenticationService;
+     this.authenticationService = authenticationService;
     }
 
     public void setUserService(UserServices userService) {

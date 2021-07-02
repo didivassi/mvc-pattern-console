@@ -15,13 +15,13 @@ public class LoginView implements View {
     LoginController loginController;
 
     @Override
-    public void show(){
+    public void show() {
         IOUtils.sendMessageToConsole("Username:");
-        username=IOUtils.readInputFromConsole();
+        username = IOUtils.readInputFromConsole();
         IOUtils.sendMessageToConsole("Password:");
-        password=IOUtils.readInputFromConsole();
+        password = IOUtils.readInputFromConsole();
 
-        if(!loginController.doAuthenticate(username,password)){
+        if (!loginController.doAuthenticate(username, password)) {
             show();
         }
 
@@ -29,6 +29,6 @@ public class LoginView implements View {
 
     @Override
     public void setController(Controller controller) {
-        loginController=(LoginController) controller;
+        loginController = (LoginController) controller;
     }
 }

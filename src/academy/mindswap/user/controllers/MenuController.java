@@ -8,10 +8,10 @@ import academy.mindswap.user.views.View;
 
 import java.awt.*;
 
-public class MenuController implements Controller{
+public class MenuController implements Controller {
 
-    final int MIN_CHOICE=1;
-    final int MAX_CHOICE=5;
+    final int MIN_CHOICE = 1;
+    final int MAX_CHOICE = 5;
     View view;
     Controller nextController;
     UserListController userListController;
@@ -19,18 +19,19 @@ public class MenuController implements Controller{
     int userId;
     private EndController endController;
 
-    public void chooseOption(String option){
+    public void chooseOption(String option) {
         int optionNumber;
+
         try {
-            optionNumber= Integer.parseInt(option);
-        }catch (NumberFormatException e){
-            ((MenuView) view).sendNotValid(MIN_CHOICE,MAX_CHOICE);
+            optionNumber = Integer.parseInt(option);
+        } catch (NumberFormatException e) {
+            ((MenuView) view).sendNotValid(MIN_CHOICE, MAX_CHOICE);
             view.show();
             return;
-
         }
-        if(optionNumber<MIN_CHOICE || optionNumber>MAX_CHOICE){
-            ((MenuView) view).sendNotValid(MIN_CHOICE,MAX_CHOICE);
+
+        if (optionNumber < MIN_CHOICE || optionNumber > MAX_CHOICE) {
+            ((MenuView) view).sendNotValid(MIN_CHOICE, MAX_CHOICE);
             view.show();
             return;
         }
@@ -71,29 +72,29 @@ public class MenuController implements Controller{
 
     @Override
     public void setView(View view) {
-        this.view=view;
+        this.view = view;
     }
 
     @Override
     public void setNextController(Controller nextController) {
-        this.nextController=nextController;
+        this.nextController = nextController;
     }
 
     @Override
     public void setUserId(int userId) {
-        this.userId=userId;
+        this.userId = userId;
     }
 
-    public void setUserListController(UserListController userListController ) {
-        this.userListController=userListController;
+    public void setUserListController(UserListController userListController) {
+        this.userListController = userListController;
     }
 
-    public void setFormController(FormController formController){
-        this.formController=formController;
+    public void setFormController(FormController formController) {
+        this.formController = formController;
     }
 
-    public void setEndController(EndController endController){
-        this.endController=endController;
+    public void setEndController(EndController endController) {
+        this.endController = endController;
     }
 
 

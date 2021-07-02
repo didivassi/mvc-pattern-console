@@ -8,7 +8,6 @@ public class WelcomeController implements Controller {
     Controller nextController;
     int userId;
 
-
     @Override
     public void init() {
         view.show();
@@ -18,17 +17,17 @@ public class WelcomeController implements Controller {
 
     @Override
     public void setView(View view) {
-        this.view =view;
+        this.view = view;
     }
 
     @Override
     public void setNextController(Controller controller) {
-        this.nextController=controller;
+        this.nextController = controller;
     }
 
     @Override
     public void setUserId(int userId) {
-        this.userId=userId;
+        this.userId = userId;
     }
 
 

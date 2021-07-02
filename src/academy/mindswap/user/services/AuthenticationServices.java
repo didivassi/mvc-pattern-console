@@ -6,5 +6,5 @@ import java.util.Optional;
 
 public interface AuthenticationServices {
 
-      Optional<User> authenticate(String username, String password);
+    Optional<User> authenticate(String username, String password);
 }

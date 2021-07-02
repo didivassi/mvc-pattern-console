@@ -6,7 +6,7 @@ import academy.mindswap.user.views.View;
 
 import java.util.List;
 
-public class UserListController implements Controller{
+public class UserListController implements Controller {
 
     View view;
     Controller nextController;
@@ -20,18 +20,18 @@ public class UserListController implements Controller{
         nextController.init();
     }
 
-    public List<User> getUsers(){
-       return userService.getUsers();
+    public List<User> getUsers() {
+        return userService.getUsers();
     }
 
     @Override
     public void setView(View view) {
-        this.view=view;
+        this.view = view;
     }
 
     @Override
     public void setNextController(Controller nextController) {
-        this.nextController=nextController;
+        this.nextController = nextController;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class UserListController implements Controller{
         this.userId = userId;
     }
 
-    public void setUserService(UserServices userService){
-        this.userService=userService;
+    public void setUserService(UserServices userService) {
+        this.userService = userService;
     }
 }

@@ -6,11 +6,11 @@ public class User {
     private String email;
     private String password;
 
-    public User(int id, String userName, String email, String password){
-        this.id=id;
-        this.userName=userName;
-        this.password=password;
-        this.email=email;
+    public User(int id, String userName, String email, String password) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
     }
 
 
@@ -30,7 +30,7 @@ public class User {
         return userName;
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 
@@ -41,8 +41,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 
 
 }

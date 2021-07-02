@@ -6,12 +6,12 @@ import academy.mindswap.user.utils.UserDB;
 import java.util.List;
 import java.util.Optional;
 
-public class UserService implements UserServices{
+public class UserService implements UserServices {
 
-    private  UserDB userDB;
+    private UserDB userDB;
 
     @Override
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         return userDB.getUsers();
     }
 
@@ -22,32 +22,31 @@ public class UserService implements UserServices{
 
     @Override
     public boolean editUsername(int id, String username) {
-         userDB.updateUsername(id,username);
-                 return true;
+        userDB.updateUsername(id, username);
+        return true;
     }
+
     @Override
     public boolean editPassword(int id, String password) {
-        userDB.updatePassword(id,password);
+        userDB.updatePassword(id, password);
         return true;
     }
+
     @Override
     public boolean editEmail(int id, String email) {
-        userDB.updateEmail(id,email);
+        userDB.updateEmail(id, email);
         return true;
     }
+
     @Override
     public boolean deleteUser(int id) {
         userDB.deleteUser(id);
         return true;
     }
 
-    public void setUserDB(UserDB userDB){
-        this.userDB=userDB;
+    public void setUserDB(UserDB userDB) {
+        this.userDB = userDB;
     }
-
-
-
-
 
 
 }

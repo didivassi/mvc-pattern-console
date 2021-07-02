@@ -6,7 +6,6 @@ import academy.mindswap.user.utils.IOUtils;
 public class WelcomeView implements View {
 
 
-
     @Override
     public void show() {
         IOUtils.sendMessageToConsole("Welcome to restricted area: ");

@@ -8,13 +8,13 @@ public enum FormLabels {
 
     String label;
 
-    FormLabels(String label){
-        this.label=label ;
+    FormLabels(String label) {
+        this.label = label;
     }
 
     @Override
-    public String toString(){
-        return  label;
+    public String toString() {
+        return label;
     }
 
 }
