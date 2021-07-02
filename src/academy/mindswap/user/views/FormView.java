@@ -4,6 +4,7 @@ import academy.mindswap.user.controllers.Controller;
 import academy.mindswap.user.controllers.FormController;
 import academy.mindswap.user.utils.FormLabels;
 import academy.mindswap.user.utils.IOUtils;
+import academy.mindswap.user.utils.Messages;
 
 import java.awt.*;
 
@@ -19,11 +20,11 @@ public class FormView implements View {
     }
 
     public void showSuccess(FormLabels label) {
-        IOUtils.sendMessageToConsole(String.format("%s changed with success\n", label.toString()));
+        IOUtils.sendMessageToConsole(String.format(Messages.CHANGE_SUCCESS, label.toString()));
     }
 
     public void showFailure(FormLabels label) {
-        IOUtils.sendMessageToConsole(String.format("%s could not be changed\n", label.toString()));
+        IOUtils.sendMessageToConsole(String.format(Messages.CHANGE_FAILURE, label.toString()));
     }
 
     public void setLabel(FormLabels label) {

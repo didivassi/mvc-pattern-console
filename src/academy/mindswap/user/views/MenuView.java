@@ -18,7 +18,7 @@ public class MenuView  implements View{
     }
 
     public void sendNotValid(int min, int max){
-        IOUtils.sendMessageToConsole(String.format("You must input a number between %d and %d",min, max) );
+        IOUtils.sendMessageToConsole(String.format(Messages.NOT_VALID_OPTION,min, max) );
     }
 
     @Override

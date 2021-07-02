@@ -3,6 +3,7 @@ package academy.mindswap.user.views;
 import academy.mindswap.user.controllers.Controller;
 import academy.mindswap.user.controllers.LoginController;
 import academy.mindswap.user.utils.IOUtils;
+import academy.mindswap.user.utils.Messages;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,9 +17,9 @@ public class LoginView implements View {
 
     @Override
     public void show() {
-        IOUtils.sendMessageToConsole("Username:");
+        IOUtils.sendMessageToConsole(Messages.INPUT_USERNAME);
         username = IOUtils.readInputFromConsole();
-        IOUtils.sendMessageToConsole("Password:");
+        IOUtils.sendMessageToConsole(Messages.INPUT_PASSWORD);
         password = IOUtils.readInputFromConsole();
 
         if (!loginController.doAuthenticate(username, password)) {

@@ -3,6 +3,7 @@ package academy.mindswap.user.views;
 import academy.mindswap.user.controllers.Controller;
 import academy.mindswap.user.controllers.UserListController;
 import academy.mindswap.user.utils.IOUtils;
+import academy.mindswap.user.utils.Messages;
 
 public class UserListView implements View {
     UserListController userListController;
@@ -10,7 +11,7 @@ public class UserListView implements View {
     @Override
     public void show() {
 
-        IOUtils.sendMessageToConsole("Listing users");
+        IOUtils.sendMessageToConsole(Messages.LISTING_USERS);
         userListController.getUsers()
                 .forEach(user -> IOUtils
                         .sendMessageToConsole(String.format("%s | %s", user.getUserName(), user.getEmail())));
