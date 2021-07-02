@@ -21,13 +21,15 @@ public class Main {
         MenuView menuView = new MenuView();
         UserListView userListView = new UserListView();
         FormView formView=new FormView();
+        EndView endView=new EndView();
 
         //Create controllers
         LoginController loginController = new LoginController();
         WelcomeController welcomeController=  new WelcomeController();
         MenuController menuController= new MenuController();
         UserListController userListController = new UserListController();
-        FormController formController =new FormController();
+        FormController formController = new FormController();
+        EndController endController =  new EndController();
 
 
         //Create services
@@ -45,6 +47,7 @@ public class Main {
         menuController.setView(menuView);
         userListController.setView(userListView);
         formController.setView(formView);
+        endController.setView(endView);
 
         //Set view controllers
         loginView.setController(loginController);
@@ -52,6 +55,7 @@ public class Main {
         menuView.setController(menuController);
         userListView.setController(userListController);
         formView.setController(formController);
+        endView.setController(endController);
 
         //Set controller next controller
         loginController.setNextController(welcomeController);
@@ -62,6 +66,7 @@ public class Main {
         //Set specific controllers
         menuController.setUserListController(userListController);
         menuController.setFormController(formController);
+        menuController.setEndController(endController);
 
         //set controller services
         loginController.setAuthenticationService(authenticationService);

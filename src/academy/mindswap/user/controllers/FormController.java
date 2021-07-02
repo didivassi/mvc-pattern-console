@@ -38,11 +38,14 @@ public class FormController implements Controller{
             case DELETE:
                 if(userService.deleteUser(userId)){
                     view.showSuccess(label);
+                    return;
                 }
 
         }
         view.showFailure(label);
     }
+
+
     @Override
     public void setView(View view) {
         this.view=(FormView) view;

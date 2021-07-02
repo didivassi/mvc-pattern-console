@@ -25,7 +25,7 @@ public class LoginController implements Controller {
 
     public boolean doAuthenticate(String username, String password){
         Optional<User> user = authenticationService.authenticate(username,password);
-        user.ifPresent(value -> setUserId(value.getId()));
+        user.ifPresent(userPresent -> setUserId(userPresent.getId()));
         return user.isPresent();
     }
 

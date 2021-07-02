@@ -17,6 +17,7 @@ public class MenuController implements Controller{
     UserListController userListController;
     FormController formController;
     int userId;
+    private EndController endController;
 
     public void chooseOption(String option){
         int optionNumber;
@@ -57,6 +58,7 @@ public class MenuController implements Controller{
             }
             case 5 -> {
                 formController.setViewLabel(FormLabels.DELETE);
+                formController.setNextController(endController);
                 setNextController(formController);
             }
         }
@@ -89,4 +91,10 @@ public class MenuController implements Controller{
     public void setFormController(FormController formController){
         this.formController=formController;
     }
+
+    public void setEndController(EndController endController){
+        this.endController=endController;
+    }
+
+
 }
